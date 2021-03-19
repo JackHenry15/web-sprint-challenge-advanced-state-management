@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import { connect } from 'react-redux';
 import {fetchSmurfs} from './actions';
 
@@ -11,8 +11,11 @@ import "./App.css";
 
 class App extends Component {
 
-  
+  componentDidMount() {
+    this.props.fetchSmurfs();
+  }
   render() {
+    
     return (
       <div className="App">
         <Header />
